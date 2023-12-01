@@ -1,32 +1,27 @@
 function setup() {
-  canvas = createCanvas(450,450);
-  background('darkred');
+  canvas = createCanvas(1000,450);
+  background('grey');
   canvas.parent('processing');
   noLoop();
 }
 
 function draw() {
-  // noStroke();
-  // fill('darkred');
-  // triangle(0,0,0,450,450,450);
-
-  strokeWeight(5);
-  stroke('pink');
-  fill('pink');
-  beginShape();
-  vertex(450,450);
-  vertex(1,225);
-  vertex(450,1);
-  endShape(CLOSE);
-
-  strokeWeight(5);
-  stroke('purple');
-  fill('purple');
-  beginShape();
-  vertex(1,1);
-  vertex(450,225);
-  vertex(1,450);
-  endShape(CLOSE);
-
+  // groene cirkel zonder rand
   
+  noStroke();
+  fill('green');
+  ellipse(225,220,390);
+  
+  // groene cirkel zonder rand
+  
+  noStroke();
+  fill('white');
+  ellipse(225,225,300);
+
+  // witte rechthoek met rode rand
+  
+  stroke('green');
+  fill('white');
+  strokeWeight(10);
+  rect(125,125,200,200);
 }
