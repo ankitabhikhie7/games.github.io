@@ -1,8 +1,9 @@
-var xJOS = 225;
+var xJOS = 75; // Plaats JOS 75 pixels vanaf de linkerkant
 var yJOS = 75;
+var canvasWidth = 450; // Breedte van het canvas
 
 function setup() {
-  canvas = createCanvas(450,450);
+  canvas = createCanvas(450, 450);
   canvas.parent('processing');
   textFont("Verdana");
   textSize(14);
@@ -12,25 +13,33 @@ function setup() {
 
 function draw() {
   background('lavender');
-  text("x = " + round(xJOS),10,20);
-  tekenJos(xJOS,yJOS);
+  text("x = " + round(xJOS), 10, 20);
+  tekenJos(xJOS, yJOS);
+  translate(0, 160);
+  tekenJos(xJOS, yJOS);
+  translate(0, 160);
+  tekenJos(xJOS, yJOS);
+  xJOS += 3; // Beweeg alle JOS-versies naar rechts met 3 pixels
+
+  // Beperk de x-positie tot de rechterkant van het canvas
+  xJOS = constrain(xJOS, 0, canvasWidth - 75);
 }
 
-function tekenJos(x,y) {
+function tekenJos(x, y) {
   push();
-  translate(x,y);
+  translate(x, y);
   scale(1); 
   noStroke();
   fill('indianred');
-  ellipse(0,0,50);
+  ellipse(0, 0, 50);
   fill('slategray');
-  ellipse(-7,-10,17);
-  ellipse(7,-10,17);
+  ellipse(-7, -10, 17);
+  ellipse(7, -10, 17);
   fill('white');
-  ellipse(-7,-8,7,13);
-  ellipse(7,-8,7,13);
+  ellipse(-7, -8, 7, 13);
+  ellipse(7, -8, 7, 13);
   fill('orange');
-  ellipse(0,3,17);
+  ellipse(0, 3, 17);
   stroke('slategray');
   strokeWeight(3);
   fill('white');

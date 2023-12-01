@@ -1,4 +1,6 @@
 function setup() {
+  angleMode(DEGREES);
+  rectMode(CENTER); 
   canvas = createCanvas(450,450);
   background('lavender');
   canvas.parent('processing');
@@ -9,10 +11,19 @@ function setup() {
 
 function draw() {
   noStroke();
-  translate(125,125);
+  translate(225,225);
   rect(0,0,200,200);
   
-  rotate(0);
+  rotate(45);
   
   rect(0,0,200,200);
+
+  push();
+  
+  colorMode(RGB, 225, 225, 0);
+  rotate(135);
+  vertex(225,225);
+  rect(0,0,50,50);
+ pop();
 }
+

@@ -9,9 +9,14 @@ function setup() {
 }
 
 function draw() {
+
+  fill('wheat'); 
+  noStroke(); 
+  rect(0, 0, width, 30); 
   
+
   fill('black');
   text("mouseX:" + round(mouseX) + " mouseY:"+round(mouseY),10,20);
   fill('indianred');
-  ellipse(mouseX,height/2,10);
+  ellipse(mouseX,mouseY,height/50,10,10);
 }

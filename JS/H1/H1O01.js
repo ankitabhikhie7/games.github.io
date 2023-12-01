@@ -11,13 +11,13 @@ function draw() {
   noStroke();
   fill('green');
   ellipse(225,220,390);
-
+  
   // groene cirkel zonder rand
-
+  
   noStroke();
   fill('white');
   ellipse(225,225,300);
-  
+
   // witte rechthoek met rode rand
   
   stroke('green');
